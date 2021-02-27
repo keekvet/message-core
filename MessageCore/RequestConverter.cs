@@ -61,7 +61,7 @@ namespace MessageRequest
 
         public static string ComposeRegistration(User user)
         {
-            return CreateDatagram(RequestType.Login, JsonConvert.SerializeObject(user));
+            return CreateDatagram(RequestType.Registration, JsonConvert.SerializeObject(user));
         }
 
         public static User DecomposeRegistration(string data)
@@ -71,7 +71,7 @@ namespace MessageRequest
 
         public static string ComposeRegistrationResponse(bool response)
         {
-            return CreateDatagram(RequestType.Login, JsonConvert.SerializeObject(response));
+            return CreateDatagram(RequestType.Registration, JsonConvert.SerializeObject(response));
         }
 
         public static bool DecomposeRegistrationResponse(string data)
