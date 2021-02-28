@@ -103,11 +103,11 @@ namespace MessageRequest
             return JsonConvert.DeserializeObject<int>(data);
         }
 
-        public static string ComposeMessageSyncInfo(int id, int localId, DateTime newDateTime)
+        public static string ComposeMessageSyncInfo(int id, int localId, string senderName, DateTime newDateTime)
         {
             return CreateDatagram(
                 RequestType.MessageSyncInfo, 
-                JsonConvert.SerializeObject(new MessageSyncInfo(id, localId, newDateTime)));
+                JsonConvert.SerializeObject(new MessageSyncInfo(id, localId, senderName, newDateTime)));
         }
 
         public static MessageSyncInfo DecomposeMessageSyncInfo(string data)
